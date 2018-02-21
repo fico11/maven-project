@@ -1,12 +1,6 @@
 pipeline {
     agent any
 
-    node('vagrant-slave') {
-    	env.JAVA_HOME="${tool 'jdk1.8.0_162'}"
-    	env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
-    	sh 'java -version'
-	}
-
      tools {
         maven 'localMAVEN'
     }
