@@ -6,8 +6,8 @@ pipeline {
     }
 
     parameters {
-         string(name: 'tomcat_dev', defaultValue: 'localhost:9080', description: 'Staging Server')
-         string(name: 'tomcat_prod', defaultValue: 'localhost:9090', description: 'Production Server')
+         string(name: 'tomcat_dev', defaultValue: 'http://localhost:9080', description: 'Staging Server')
+         string(name: 'tomcat_prod', defaultValue: 'http://localhost:9090', description: 'Production Server')
     }
 
     triggers {
@@ -31,13 +31,13 @@ pipeline {
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "scp -i /home/jenkins/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
+                        sh "cp -i **/*.war ${params.tomcat_dev}"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "scp -i /home/jenkins/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
+                        sh "cp -i **/*.war ${params.tomcat_prod}"
                     }
                 }
             }
