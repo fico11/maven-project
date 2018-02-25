@@ -31,7 +31,7 @@ pipeline {
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-			build job: 'Deploy-to-staging'
+			sh "scp **/target/*.war ${params.tomcat_dev}:/var/lib/tomcat9/webapps"
                     }
                 }
 
