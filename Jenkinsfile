@@ -31,7 +31,7 @@ pipeline {
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-			sh "cp /home/fede/.jenkins/workspace/deploy-to-staging/webapp/target/webapp.war ${params.tomcat_dev}:/var/lib/tomcat/webapps"
+			sh "cp /home/fede/.jenkins/workspace/deploy-to-staging/webapp/target/webapp.war ${params.tomcat_dev}:/var/lib/tomcat7/webapps"
                     }
                 }
 
