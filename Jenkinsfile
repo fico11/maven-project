@@ -6,7 +6,7 @@ pipeline {
     }
 
     parameters {
-         string(name: 'tomcat_dev', defaultValue: 'http://localhost:9080', description: 'Staging Server')
+         string(name: 'tomcat_dev', defaultValue: 'localhost:9080', description: 'Staging Server')
          string(name: 'tomcat_prod', defaultValue: 'http://localhost:9090', description: 'Production Server')
     }
 
