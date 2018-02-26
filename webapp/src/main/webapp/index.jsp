@@ -1,3 +1,1 @@
-Hello, World!\n
-Andate a cagar!!!
-
+Lameme el falo!!!
