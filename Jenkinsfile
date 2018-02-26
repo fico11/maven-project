@@ -31,7 +31,7 @@ pipeline {
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-			sh "cp **/target/*.war tomcat:tomcat@${params.tomcat_dev}:/var/lib/tomcat9/webapps"
+			sh "cp **/target/*.war tomcat@${params.tomcat_dev}:/var/lib/tomcat9/webapps"
                     }
                 }
 
