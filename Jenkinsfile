@@ -37,7 +37,7 @@ pipeline {
 
                 stage ("Deploy to Production"){
                     steps {
-                        
+                        build job: 'deploy-to-prod-to-potamadre'
                     }
                 }
             }
