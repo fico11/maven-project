@@ -31,13 +31,13 @@ pipeline {
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-			sh "cp **/target/*.war ${params.tomcat_dev}:/var/lib/tomcat9/webapps"
+			sh "cp **/target/*.war /var/lib/tomcat9/webapps"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        build job: 'Deploy-to-prod'
+                        
                     }
                 }
             }
