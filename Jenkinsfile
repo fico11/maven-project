@@ -31,7 +31,7 @@ pipeline {
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-			echo "vamos a desplegar, colo?"
+			    echo "vamos a desplegar en ${tomcat_dev}"
 			sh "cp **/target/*.war /mnt/1TB/apps/apache-tomcat-9.0.5_staging/webapps"
                     }
                 }
