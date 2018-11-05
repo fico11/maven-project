@@ -32,14 +32,14 @@ pipeline {
                 stage ('Deploy to Staging'){
                     steps {
 		    	echo "vamos a desplegar en ${tomcat_dev}"
-			sh "cp **/target/*.war C:\apps\Tomcat\apache-tomcat-9.0.5_staging\webapps"
+			//sh "cp **/target/*.war C:\apps\Tomcat\apache-tomcat-9.0.5_staging\webapps"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
 		    	echo "vamos a desplegar en ${tomcat_prod}"
-                        sh "cp **/target/*.war C:\apps\Tomcat\apache-tomcat-9.0.5_prod\webapps"
+                        //sh "cp **/target/*.war C:\apps\Tomcat\apache-tomcat-9.0.5_prod\webapps"
                     }
                 }
             }
