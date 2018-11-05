@@ -17,7 +17,7 @@ pipeline {
 	stages{
         stage('Build'){
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
             post {
                 success {
@@ -32,14 +32,14 @@ pipeline {
                 stage ('Deploy to Staging'){
                     steps {
 		    	echo "vamos a desplegar en ${tomcat_dev}"
-			sh "cp **/target/*.war /mnt/1TB/apps/apache-tomcat-9.0.5_staging/webapps"
+			bat "copy **/target/*.war C:\apps\Tomcat\apache-tomcat-9.0.5_staging\webapps"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
 		    	echo "vamos a desplegar en ${tomcat_prod}"
-                        sh "cp **/target/*.war /mnt/1TB/apps/apache-tomcat-9.0.5_prod/webapps"
+                        bat "copy **/target/*.war C:\apps\Tomcat\apache-tomcat-9.0.5_prod\webapps"
                     }
                 }
             }
