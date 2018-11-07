@@ -32,14 +32,14 @@ pipeline {
 				stage ('Deploy to Staging'){
 					steps {						
 						echo "vamos a desplegar en ${tomcat_dev}"
-						bat "winscp -i **/target/*.war C:\apps\Tomcat\apache-tomcat-9.0.5_staging\webapps"
+						bat "winscp **/target/*.war C:\apps\Tomcat\apache-tomcat-9.0.5_staging\webapps"
 					}
 				}
 
 				stage ("Deploy to Production"){
 					steps {
 						echo "vamos a desplegar en ${tomcat_prod}"
-						bat "winscp -i **/target/*.war C:\apps\Tomcat\apache-tomcat-9.0.5_prod\webapps"
+						bat "winscp **/target/*.war C:\apps\Tomcat\apache-tomcat-9.0.5_prod\webapps"
 					}
 				}
 			}
