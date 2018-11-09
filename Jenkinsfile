@@ -32,7 +32,7 @@ pipeline {
 				stage ('Deploy to Staging'){
 					steps {						
 						echo "vamos a desplegar en ${tomcat_dev}"
-						bat "C:\\\"Program Files\"\\PuTTY\\pscp -scp "**\\target\\*.war" C:\\apps\\Tomcat\\apache-tomcat-9.0.5_staging\\webapps"
+						bat "C:\\\"Program Files\"\\PuTTY\\pscp -scp **\\target\\*.war "C:\\apps\\Tomcat\\apache-tomcat-9.0.5_staging\\webapps""
 					}
 				}
 
