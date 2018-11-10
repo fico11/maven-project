@@ -32,14 +32,14 @@ pipeline {
 				stage ('Deploy to Staging'){
 					steps {						
 						echo "vamos a desplegar en ${tomcat_dev}"
-						bat "scp C:\\Users\\Fede\\.jenkins\\workspace\\PipelineAsCodeExample\\webapp\\target.war C:\\apps\\Tomcat\\apache-tomcat-9.0.5_staging\\webapps"
+						bat "scp C:\\Users\\Fede\\.jenkins\\workspace\\PipelineAsCodeExample\\webapp\\target\\webapp.war C:\\apps\\Tomcat\\apache-tomcat-9.0.5_staging\\webapps"
 					}
 				}
 
 				stage ("Deploy to Production"){
 					steps {
 						echo "vamos a desplegar en ${tomcat_prod}"
-						bat "scp c:\\Users\\Fede\\.jenkins\\workspace\\package\\webapp\\target\\webapp.war C:\\apps\\Tomcat\\apache-tomcat-9.0.5_prod\\webapps"
+						bat "scp C:\\Users\\Fede\\.jenkins\\workspace\\PipelineAsCodeExample\\webapp\\target\\webapp.war C:\\apps\\Tomcat\\apache-tomcat-9.0.5_prod\\webapps"
 					}
 				}
 			}
